@@ -3,8 +3,11 @@ from applicant.models import Applicant
 
 
 def index (request):
+    return render(request, "applicant/index.html")
+
+def applicants (request):
     applicants = Applicant.objects.all()
-    return render(request, "applicant/index.html", context={"applicant":applicants})
+    return render(request, "applicant/applicants.html", context={"applicant":applicants})
 
 def applicant_detail (request, slug):
     applicant_slug = get_object_or_404(Applicant, slug=slug)

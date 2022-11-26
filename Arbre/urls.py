@@ -19,7 +19,7 @@ from django.urls import path
 from django.conf.urls.static import static
 from Arbre import settings
 
-from applicant.views import applicant_detail, index
+from applicant.views import applicant_detail, index, applicants
 from account_simplonien.views import signup_simplonien, logout_simplonien, login_simplonien
 
 
@@ -29,5 +29,6 @@ urlpatterns = [
     path('login/', login_simplonien, name="login"),
     path('logout/', logout_simplonien, name="logout"),
     path('signup_simplonien/', signup_simplonien, name="signup_simplonien"),
+    path('candidats/', applicants, name="applicants_page"),
     path('candidats/<str:slug>', applicant_detail, name="applicant"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
