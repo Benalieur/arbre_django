@@ -15,13 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from applicant.views import applicant_detail, index
 
 from django.conf.urls.static import static
 from Arbre import settings
 
+from applicant.views import applicant_detail, index
+from account_simplonien.views import signup_simplonien, logout_simplonien, login_simplonien
+
+
 urlpatterns = [
     path('', index, name="index_page"),
     path('admin/', admin.site.urls),
+    path('login/', login_simplonien, name="login"),
+    path('logout/', logout_simplonien, name="logout"),
+    path('signup_simplonien/', signup_simplonien, name="signup_simplonien"),
     path('candidats/<str:slug>', applicant_detail, name="applicant"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

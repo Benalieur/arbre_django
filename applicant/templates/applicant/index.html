@@ -8,7 +8,7 @@
                     <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Photo de profil de {{ applicant.name }}" style="min-width: 200px; max-width: 200px; height: 250px;" src="{{ applicant.img.url }}" data-holder-rendered="true">
                     <div class="card-body d-flex flex-column align-items-start">
                         <h3 class="mb-0">
-                            <a class="text-dark" href="{% url "applicant" applicant.slug %}">{{applicant.name}}</a><br>
+                            <a class="text-dark" href="{% url "applicant" applicant.slug %}">{{applicant.first_name}} {{applicant.name}}</a><br>
                         </h3>
                         <div class="mb-1 text-muted">{{applicant.position}}</div>
                             <p class="card-text mb-auto">{{applicant.description}}</p>

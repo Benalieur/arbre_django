@@ -18,12 +18,21 @@
 <body>
     
     <div class="container-fluid" style="max-width: 100%">
+
+        {% if user.is_authenticated %}
+            {{ user.username}}
+            <a href="{% url "logout" %}">Déconnexion</a>    
+        {% else %}
+            <a href="{% url "signup_simplonien" %}">S'incrire</a>   
+            <a href="{% url "login" %}">Connexion</a>   
+        {% endif %}
+
         <a href="{% url "index_page" %}">
             <h1>Les Simploniens de la P3 Développeur IA</h1>
         </a>
 
-            {% block content %}
-            {% endblock content %}
+            {% block content %}{% endblock content %}
+
     </div>
 
     
