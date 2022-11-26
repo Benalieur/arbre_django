@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+<div class="container-fluid d-flex p-2" style="margin-top: 10px">
+    {% block content %}
+        {% for applicant in applicant %}
+            <div class="col-md-6">
+                <div class="card flex-md-row mb-4 box-shadow h-md-250"style="justify-content: center; align-items: center">
+                    <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Photo de profil de {{ applicant.name }}" style="min-width: 200px; max-width: 200px; height: 250px;" src="{{ applicant.img.url }}" data-holder-rendered="true">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <h3 class="mb-0">
+                            <a class="text-dark" href="{% url "applicant" applicant.slug %}">{{applicant.name}}</a><br>
+                        </h3>
+                        <div class="mb-1 text-muted">{{applicant.position}}</div>
+                            <p class="card-text mb-auto">{{applicant.description}}</p>
+                        </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endblock content %}
+</div>
