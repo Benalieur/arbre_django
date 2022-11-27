@@ -21,9 +21,9 @@
 
         {% if user.is_authenticated %}
             {{ user.username}}
-            <a href="{% url "logout" %}">Déconnexion</a>    
+            <a href="{% url "logout" %}">Déconnexion</a>
         {% else %}
-            <a href="{% url "signup_simplonien" %}">S'incrire</a>   
+            <a href="{% url "signup_simplonien" %}">S'incrire</a>
             <a href="{% url "login" %}">Connexion</a>   
         {% endif %}
 
