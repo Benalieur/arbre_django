@@ -9,7 +9,9 @@ def signup_simplonien(request):
         #Traiter le formulaire
         username =request.POST.get("username")
         password =request.POST.get("password")
-        user = User.objects.create_user(username=username, password=password)
+        email =request.POST.get("email")
+        phone =request.POST.get("phone")
+        user = User.objects.create_user(username=username, password=password, email=email)
         login(request, user)
         return redirect("../")
 
