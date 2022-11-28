@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+    <div>
+        <h2>Bienvenue {{user.username}} !</h2>
+    </div>
+
+    <div>
+        <p>Ceci est la page pour déposer sa candidature</p>
+    </div>
+    
+    {% else %}
+        <a href="{% url "signup_simplonien" %}">S'incrire</a>
+        <a href="{% url "login" %}">Connexion</a>
+        
+    {% endif %}
+
+{% endblock content %}

@@ -34,3 +34,11 @@ def login_simplonien(request):
 def logout_simplonien(request):
     logout(request)
     return redirect("../")
+
+# Vue du profil utilisateur simplonien
+def account(request):
+    return render(request, "account_simplonien/account.html")
+
+# Vue pour la candidature du simplonien
+def apply(request):
+    return render(request, "account_simplonien/apply.html")
