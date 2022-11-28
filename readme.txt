@@ -1,4 +1,4 @@
-Architecture du projet :
+Architecture du projet : 
 
 Les dossiers :
     Arbre : Dossier principal du projet.
