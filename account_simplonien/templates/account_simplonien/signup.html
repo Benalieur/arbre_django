@@ -4,17 +4,25 @@
 {% block content %}
 
 {% comment %} Formulaire d'incription pour les simploniens {% endcomment %}
-    <h1>S'incrire</h1>
+    <h1>S'inscrire</h1>
 
     <form method="POST">
         {% csrf_token %}
         <p>
-            <label for="username">Nom d'utilisateur</label>
-            <input id="username" type="text" name="username">
+            <label for="username">Nom d'utilisateur</label><br>
+            <input id="username" type="text" name="username" required>
         </p>
         <p>
-            <label for="password">Mot de passe</label>
-            <input id="password" type="password" name="password">
+            <label for="password">Mot de passe</label><br>
+            <input id="password" type="password" name="password" required>
+        </p>
+        <p>
+            <label for="email">Email</label><br>
+            <input id="email" type="email" name="email" placeholder="example@example.com" required>
+        </p>
+        <p>
+            <label for="phone">Enter a phone number:</label><br>
+            <input type="tel" id="phone" name="phone" placeholder="0600000000" pattern="[0-9]{10}" required>
         </p>
         <button type="submit">S'incrire</button:type>
     </form>
