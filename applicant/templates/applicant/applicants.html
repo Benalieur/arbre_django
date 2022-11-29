@@ -5,7 +5,7 @@
         {% for applicant in applicant %}
             <div class="col-md-6">
                 <div class="card flex-md-row mb-4 box-shadow h-md-250"style="justify-content: center; align-items: center">
-                    <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Photo de profil de {{ applicant.name }}" style="min-width: 200px; max-width: 200px; height: 250px;" src="{{ applicant.img.url }}" data-holder-rendered="true">
+                    <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Photo de profil de {{ applicant.name }}" style="min-width: 200px; max-width: 200px; height: 250px;" src="{{ applicant.img }}" data-holder-rendered="true">
                     <div class="card-body d-flex flex-column align-items-start">
                         <h3 class="mb-0">
                             <a class="text-dark" href="{% url "applicant" applicant.slug %}">{{applicant.first_name}} {{applicant.name}}</a><br>
