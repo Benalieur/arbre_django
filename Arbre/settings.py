@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'applicant',
     'account_simplonien',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +129,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 AUTH_USER_MODEL = "account_simplonien.Simplonien"
+
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
+
