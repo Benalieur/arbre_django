@@ -80,8 +80,14 @@
         </form>
 
         <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2" > <a  class="text-light " href="{% url 'login' %}">Connexion</a> </button>
-          <button type="button" class="btn btn-outline-light me-2"  ><a  class="text-light " href="{% url 'signup_simplonien' %}">s'inscrire</a></button>
+          {% if user.is_authenticated %}
+            {{ user.username}}
+            <a href="{% url "account" %}">Mon profil</a>
+            <a href="{% url "logout" %}">Déconnexion</a>
+        {% else %}
+            <a href="{% url "signup_simplonien" %}">S'inscrire</a>
+            <a href="{% url "login" %}">Connexion</a>
+        {% endif %}
         </div>
       </div>
     </div>
