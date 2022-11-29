@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from django.conf.urls.static import static
 from Arbre import settings
@@ -30,7 +30,8 @@ urlpatterns = [
     path('logout/', logout_simplonien, name="logout"),
     path('account/', account, name="account"),
     path('apply/', apply, name="apply"),
-    path('signup_simplonien/', signup_simplonien, name="signup_simplonien"),
+    # path('signup_simplonien/', signup_simplonien, name="signup_simplonien"),
     path('candidats/', applicants, name="applicants_page"),
     path('candidats/<str:slug>', applicant_detail, name="applicant"),
+    path('', include("account_simplonien.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

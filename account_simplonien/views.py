@@ -4,6 +4,14 @@ from applicant.models import Applicant
 from django.core.files.storage import FileSystemStorage
 
 
+
+from django.views.generic import CreateView                             # For SignUp form Page  
+from . import forms                                                     # For SignUp form Page 
+from django.urls import reverse_lazy                                    # For signUp page methode 2
+from django.contrib.auth.decorators import login_required
+
+
+
 User = get_user_model()
 
 # Vue d'inscription
@@ -44,6 +52,23 @@ def logout_simplonien(request):
 def account(request):
     return render(request, "account_simplonien/account.html")
 
+
+    #################################################################################################################################
+#################################################################################################################################
+#################################################################################################################################
+###                                                                                                                           ###
+###                                                     SignUp form Page                                                      ###
+###                                                                                                                           ###
+#################################################################################################################################
+#################################################################################################################################
+#################################################################################################################################
+
+class SignupPage(CreateView):
+    form_class = forms.UserCreateForm
+    success_url = reverse_lazy('login')
+    template_name = 'account_simplonien/signup.html'
+
+
 # Vue pour la candidature du simplonien
 def apply(request):
     if request.method == "POST":
@@ -65,3 +90,4 @@ def apply(request):
         applicant.save()
     
     return render(request, "account_simplonien/apply.html")
+
