@@ -20,11 +20,6 @@ IS_HEROKU = "DYNO" in os.environ
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-<<<<<<< HEAD
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
-
-
 if not IS_HEROKU:
     from dotenv import load_dotenv
     load_dotenv()
@@ -42,13 +37,7 @@ else:
 # SECURITY WARNING: don't run with debug turned on in production!
 if not IS_HEROKU:
     DEBUG = True
-=======
-SECRET_KEY = os.getenv('SECRET_KEY')
-DEBUG = True
 
-ALLOWED_HOSTS = []
-
->>>>>>> origin/main
 
 # Application definition
 
@@ -61,11 +50,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'applicant',
     'account_simplonien',
-<<<<<<< HEAD
-    
-=======
     'widget_tweaks',
->>>>>>> origin/main
 ]
 
 MIDDLEWARE = [
@@ -186,7 +171,6 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-<<<<<<< HEAD
 MEDIA_URL = "/media/img_applicant/"
 MEDIA_ROOT = BASE_DIR / "media/img_applicant/"
 
@@ -195,13 +179,3 @@ LOGIN_REDIRECT_URL = '/'
 AUTH_USER_MODEL = "account_simplonien.Simplonien"
 
 CSRF_TRUSTED_ORIGINS = ['https://simploniens.herokuapp.com']
-=======
-MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / "media/img_applicant"
-AUTH_USER_MODEL = "account_simplonien.Simplonien"
-
-STATICFILES_DIRS = [
-    BASE_DIR / "static"
-]
-
->>>>>>> origin/main
