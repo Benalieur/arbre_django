@@ -35,6 +35,6 @@ def get_graph(input_value: dict, username: str):
     #plt.title('Compétences', size=40)
     lines, labels = plt.thetagrids(np.degrees(label_loc), labels=categories)
 
-    plt.savefig(f"static/image/graphic/graphic_{username}.jpg")
+    plt.savefig(f"media/graphic/graphic_{username}.jpg")
 
     plt.legend()

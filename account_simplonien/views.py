@@ -86,11 +86,11 @@ def apply(request):
 
 # Vue pour les competences du simplonien
 def competence(request):
-    submitted = False    
+    submitted = False
     if request.method == "POST":
         form = CompetencesForm(request.POST)
         if form.is_valid():
-            get_graph(form.cleaned_data, "test")
+            get_graph(form.cleaned_data, str(request.user))
             form.save()
             return HttpResponseRedirect("/account/")
     else:

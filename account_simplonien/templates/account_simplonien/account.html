@@ -14,6 +14,7 @@
             <p><a href="{% url "apply" %}">Ma candidature</a></p>
             <p><a href="{% url "competence" %}">Mon arbre de compétences</a></p>
         </div>
+        <div><img src="/arbre_django/media/graphic/graphic_{{user.username}}.jpg" alt="graphique de compétences de {{user.username}}" ></div>
     </div>
     {% else %}
         <a href="{% url "signup_simplonien" %}">S'incrire</a>

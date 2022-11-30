@@ -1,6 +1,8 @@
 from django.db import models
 from django.urls import reverse
 
+from Arbre.settings import AUTH_USER_MODEL
+
 
 '''
 Class des simploniens :
@@ -12,7 +14,7 @@ Poste recherché
 Description
 '''
 class Applicant(models.Model):
-    img=models.ImageField(upload_to="img_applicant")
+    img=models.ImageField(upload_to="media/img_applicant")
     name=models.CharField(max_length=50)
     first_name=models.CharField(max_length=50)
     slug=models.SlugField(max_length=100)

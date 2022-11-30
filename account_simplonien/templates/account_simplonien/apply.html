@@ -19,27 +19,27 @@
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div>
-            <label for="upload">Photo de profil :</label>
+            <label for="upload">Photo de profil :</label><br>
             <input type="file" accept="image/png, image/jpg" name="upload" id="upload" required>
         </div>
         <div>
-            <label for="name">Votre nom :</label>
+            <label for="name">Nom :</label><br>
             <input type="text" name="name" id="name" pattern="[a-Z]{2-20}" required>
         </div>
         <div>
-            <label for="first_name">Votre prenom :</label>
+            <label for="first_name">Prénom :</label><br>
             <input type="text" name="first_name" id="first_name" pattern="[a-Z]{2-20}" required>
         </div>
         <div>
-            <label for="slug">Mon URL personnalisé :</label>
-            <input type="text" name="slug" id="slug" placeholder="nomprenom" required>
-            <p>Exemple : https://monsite.fr/<b>monsuperurl</b></p>
+            <label for="slug">Mon URL personnalisée :</label><br>
+            <input type="text" name="slug" id="slug" placeholder="nom_prenom" required>
+            <p>Exemple : https://monsite.fr/<b>monsuper_url</b></p>
         </div>
         <div>
-            <label for="position">Mon objectif :</label>
+            <label for="position">Mon objectif :</label><br>
             <select name="position" id="position" required>
                 <option value="">--Selectionner un choix--</option>
-                <option value="Data Engineer-">Data Engineer-</option>
+                <option value="Data Engineer">Data Engineer</option>
                 <option value="Data Analyst">Data Analyst</option>
                 <option value="Data Scientist">Data Scientist</option>
                 <option value="Dev Data/IA">Dev Data/IA</option>
@@ -47,7 +47,7 @@
             </select>
         </div>
         <div>
-            <label for="description">Ma description :</label>
+            <label for="description">Ma description brève : (500 caractères max)</label><br>
             <textarea id="description" name="description"required></textarea>
 
         </div>
