@@ -19,3 +19,4 @@ class UserCreateForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = models.Simplonien
         fields = ('username', 'first_name','password1','password2','email',  'last_name')
+        
