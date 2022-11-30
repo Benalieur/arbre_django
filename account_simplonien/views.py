@@ -71,7 +71,7 @@ def apply(request):
         slug =request.POST.get("slug")
         position =request.POST.get("position")
         description =request.POST.get("description")
-
+        
         upload = request.FILES['upload']
         fss = FileSystemStorage()
         file = fss.save(name + "_" + first_name+upload.name[len(upload.name)-4:], upload)
