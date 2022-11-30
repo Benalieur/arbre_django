@@ -7,3 +7,5 @@ django-widget-tweaks
 django-crispy-forms
 requests
 Pillow
+numpy
+matplotlib

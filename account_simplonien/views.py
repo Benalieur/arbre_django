@@ -90,7 +90,7 @@ def competence(request):
     if request.method == "POST":
         form = CompetencesForm(request.POST)
         if form.is_valid():
-            get_graph(form.cleaned_data, "dade")
+            get_graph(form.cleaned_data, "test")
             form.save()
             return HttpResponseRedirect("/account/")
     else:
