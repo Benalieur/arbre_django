@@ -30,7 +30,7 @@ def get_graph(input_value: list, username: str):
     plt.plot(label_loc, A4, label='E4')
     #plt.plot(label_loc, A5, label='tot')
 
-    plt.title('Compétence', size=20)
+    #plt.title('Compétences', size=40)
     lines, labels = plt.thetagrids(np.degrees(label_loc), labels=categories)
 
     plt.savefig(f"applicant/graphic/graphic_img/graphic_{username}.jpg")

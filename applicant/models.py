@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
+
 '''
 Class des simploniens :
 Photo
@@ -24,4 +25,31 @@ class Applicant(models.Model):
     def get_absolute_url(self):
         return reverse("applicant", kwargs={"slug": self.slug})
     
-    
+
+# iterable
+COMP_CHOICES =(
+	("1", 1),
+	("2", 2),
+	("3", 3),
+)
+
+# creating a form
+class CompForm(models.Model):
+        C1=models.CharField(max_length=1, choices = COMP_CHOICES)
+        C2=models.CharField(max_length=1, choices = COMP_CHOICES)
+        C3=models.CharField(max_length=1, choices = COMP_CHOICES)
+        C4=models.CharField(max_length=1, choices = COMP_CHOICES)
+        C5=models.CharField(max_length=1, choices = COMP_CHOICES)
+        C6=models.CharField(max_length=1, choices = COMP_CHOICES)
+        C7=models.CharField(max_length=1, choices = COMP_CHOICES)
+        C8=models.CharField(max_length=1, choices = COMP_CHOICES)
+        C9=models.CharField(max_length=1, choices = COMP_CHOICES)
+        C10=models.CharField(max_length=1, choices = COMP_CHOICES)
+        C11=models.CharField(max_length=1, choices = COMP_CHOICES)
+        C12=models.CharField(max_length=1, choices = COMP_CHOICES)
+        C13=models.CharField(max_length=1, choices = COMP_CHOICES)
+        C14=models.CharField(max_length=1, choices = COMP_CHOICES)
+        C15=models.CharField(max_length=1, choices = COMP_CHOICES)
+        C16=models.CharField(max_length=1, choices = COMP_CHOICES)
+        C17=models.CharField(max_length=1, choices = COMP_CHOICES)
+        C18=models.CharField(max_length=1, choices = COMP_CHOICES)

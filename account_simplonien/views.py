@@ -1,8 +1,8 @@
 from django.contrib.auth import get_user_model, login, logout, authenticate
 from django.shortcuts import redirect, render
-from applicant.models import Applicant
+from applicant.models import Applicant, CompForm
 from django.core.files.storage import FileSystemStorage
-
+from django.http import HttpResponse, HttpResponseRedirect
 
 
 from django.views.generic import CreateView                             # For SignUp form Page  
@@ -53,16 +53,7 @@ def account(request):
     return render(request, "account_simplonien/account.html")
 
 
-#################################################################################################################################
-#################################################################################################################################
-#################################################################################################################################
-###                                                                                                                           ###
-###                                                     SignUp form Page                                                      ###
-###                                                                                                                           ###
-#################################################################################################################################
-#################################################################################################################################
-#################################################################################################################################
-
+# SignUp form Page
 class SignupPage(CreateView):
     form_class = forms.UserCreateForm
     success_url = reverse_lazy('login')
@@ -91,3 +82,15 @@ def apply(request):
     
     return render(request, "account_simplonien/apply.html")
 
+# Vue pour les competences du simplonien
+def competence(request):
+    if request.method == "POST":
+        form = CompForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect("account_simplonien/competence.html")
+    else:
+        form = CompForm
+        if "submitted" in request.GET:
+            submitted = True
+    return render(request, "account_simplonien/competence.html", {"form" : form})

@@ -3,6 +3,7 @@
 {% block content %}
 
     {% if user.is_authenticated %}
+    <div class="container-fluid">
         <div>
             <h2>Bienvenue {{user.username}} !</h2>
         </div>
@@ -10,11 +11,10 @@
         <div>
             <p>Nom d'utilisateur : {{user.username}}</p>
             <p>Email : {{user.email}}</p>
-            <p>Téléphone : {{user.phone}}</p>
             <p><a href="{% url "apply" %}">Ma candidature</a></p>
-            <p><a href="">Mon arbre de compétences</a></p>
+            <p><a href="{% url "competence" %}">Mon arbre de compétences</a></p>
         </div>
-
+    </div>
     {% else %}
         <a href="{% url "signup_simplonien" %}">S'incrire</a>
         <a href="{% url "login" %}">Connexion</a>
