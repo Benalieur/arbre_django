@@ -16,8 +16,10 @@
     </div>
     <form method="POST">
         {% csrf_token %}
-
+               
+        <div class="grid">
                 {% for x in form %}
+                
                 <div class="miniForm">
                     <div class="input-comp">
                         {{ x.label }}
@@ -25,6 +27,7 @@
                     </div>
                 </div>
                 {% endfor %}
+                </div>
                     <input class="submit" type="submit" value="Envoyer">
                 </div>
             </div>
