@@ -1,6 +1,8 @@
 from django.contrib.auth import get_user_model, login, logout, authenticate
 from django.shortcuts import redirect, render
-from applicant.models import Applicant, CompForm
+from applicant.forms import CompetencesForm
+from applicant.graphic.graphic import get_graph
+from applicant.models import Applicant, Competence
 from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse, HttpResponseRedirect
 
@@ -84,13 +86,15 @@ def apply(request):
 
 # Vue pour les competences du simplonien
 def competence(request):
+    submitted = False    
     if request.method == "POST":
-        form = CompForm(request.POST)
+        form = CompetencesForm(request.POST)
         if form.is_valid():
+            get_graph(form.cleaned_data, "dade")
             form.save()
-            return HttpResponseRedirect("account_simplonien/competence.html")
+            return HttpResponseRedirect("/competence/")
     else:
-        form = CompForm
+        form = CompetencesForm
         if "submitted" in request.GET:
             submitted = True
     return render(request, "account_simplonien/competence.html", {"form" : form})

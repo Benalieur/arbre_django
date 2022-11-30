@@ -1,8 +1,8 @@
 from django.forms import ModelForm
-from .models import CompForm
+from .models import Competence
 
 
 class CompetencesForm(ModelForm):
     class Meta:
-        form = CompForm
-        fields = ("C1", "C1", "C1", "C1", "C1", "C1", "C1", "C1", "C1", "C1", "C1", "C1", )
+        model = Competence
+        fields = "__all__"
