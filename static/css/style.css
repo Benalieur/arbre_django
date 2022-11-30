@@ -1,6 +1,6 @@
 body{
     min-height: 100vh;
-display: flex;
+    display: flex;
     flex-direction: column;
  }
  
@@ -8,7 +8,27 @@ main{
     flex-grow: 1;
 }
 
- footer{
- background-color: black;
-color: white; 
-text-align: center;}
+footer{
+    background-color: black;
+    color: white; 
+    text-align: center;}
+
+
+
+
+
+
+.miniForm {
+    height: 100%;
+    width: 40%;
+}
+
+.input-comp {
+    margin: 20px 0 0 10px;
+    width: 150px;
+    font-size: 20px;
+}
+
+.submit {    
+    margin: 20px 0 30px 10px;
+}

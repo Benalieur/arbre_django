@@ -1,22 +1,37 @@
 {% extends 'base.html' %}
+{% load widget_tweaks %}
 
 {% block content %}
 
+<div class="container-fluid">
     {% if user.is_authenticated %}
-    <div>
+    <div style="margin-left:10px">
+        <div>
         <h2>Bienvenue {{user.username}} !</h2>
     </div>
 
     <div>
         <p>Ceci est la page pour ajouter vos compétences</p>
     </div>
+    </div>
     <form method="POST">
         {% csrf_token %}
 
-        <div class="container-fluid">
-            {{ form.as_p }}
-            <input type="submit" value="Envoyer">
-        </div>
+                {% for x in form %}
+                <div class="miniForm">
+                    <div class="input-comp">
+                        {{ x.label }}
+                        {{ x|add_class:"form-control" }}
+                    </div>
+                </div>
+                {% endfor %}
+                    <input class="submit" type="submit" value="Envoyer">
+                </div>
+            </div>
+            
+        </div> 
+
+
     </form>
     
     {% else %}

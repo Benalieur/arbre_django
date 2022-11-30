@@ -4,6 +4,8 @@
 
 {% block content %}
 
+<div class="container">
+
  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -42,7 +44,7 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-
+</div>
 {% comment %} <div class="slideshow-container">
 
   <!-- Full-width images with number and caption text -->
@@ -71,5 +73,4 @@
 
 
 
-    <a href="{% url "applicants_page" %}">Voir tous les Simploniens</a>
 {% endblock content %}

@@ -92,7 +92,7 @@ def competence(request):
         if form.is_valid():
             get_graph(form.cleaned_data, "dade")
             form.save()
-            return HttpResponseRedirect("/competence/")
+            return HttpResponseRedirect("/account/")
     else:
         form = CompetencesForm
         if "submitted" in request.GET:
