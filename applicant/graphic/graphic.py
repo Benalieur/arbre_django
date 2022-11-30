@@ -3,12 +3,14 @@ import matplotlib.pyplot as plt
 
 input_simploniens = [2]*11 +[1]*5 +[3]*2  # A remplacer par un input
 
-def get_graph(input_value: list, username: str):
-    input_simploniens = input_value
+def get_graph(input_value: dict, username: str):
+    input_simploniens = []
+    for value in input_value:
+        input_simploniens.append(int(input_value[value]))
     categories = ['C1', 'C2', 'C3', 'C4', 'C5','C6','C7','C8','C9','C10','C11','C12','C13','C14','C15','C16','C17','C18','']
-
+    print(input_simploniens)
     # le '' est la pour éviter un message d'erreur
-    A1 = input_simploniens[0:2]+[0]*16    
+    A1 = input_simploniens[0:2]+[0]*16
     A2 = [0]*2 + input_simploniens[3:7] + [0]*12
     A3 = [0]*7 + input_simploniens[8:14] + [0]*5
     A4 =  [0]*16 + input_simploniens[16:18]
@@ -36,5 +38,3 @@ def get_graph(input_value: list, username: str):
     plt.savefig(f"applicant/graphic/graphic_img/graphic_{username}.jpg")
 
     plt.legend()
-
-get_graph(input_simploniens, "mamlloto")

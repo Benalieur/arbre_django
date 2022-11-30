@@ -24,7 +24,7 @@ from account_simplonien.views import competence, logout_simplonien, login_simplo
 
 
 urlpatterns = [
-    path('', index, name="index_page",),
+    path('', index, name="index_page"),
     path('admin/', admin.site.urls),
     path('login/', login_simplonien, name="login"),
     path('logout/', logout_simplonien, name="logout"),
