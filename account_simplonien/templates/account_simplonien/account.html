@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
+<div class="container-fluid" style="margin:20px 0 0 30px">
 {% block content %}
 
     {% if user.is_authenticated %}
-    <div class="container-fluid">
+<div class="container-fluid" style="padding:30px 0 0 40px">
+
         <div>
             <h2>Bienvenue {{user.username}} !</h2>
         </div>
@@ -21,5 +23,5 @@
         <a href="{% url "login" %}">Connexion</a>
         
     {% endif %}
-
+</div>
 {% endblock content %}

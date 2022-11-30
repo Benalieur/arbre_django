@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 
-<div class="container-fluid d-flex p-2" style="margin-top: 10px">
-    {% block content %}
+<div class="container-fluid" style="margin:20px 0 0 30px">
+{% block content %}
+<div class="container-fluid" style="padding:30px 0 0 40px">
         {% for applicant in applicant %}
             <div class="col-md-6">
                 <div class="card flex-md-row mb-4 box-shadow h-md-250"style="justify-content: center; align-items: center">
@@ -17,4 +18,6 @@
             </div>
         {% endfor %}
     {% endblock content %}
+</div>
+</div>
 </div>

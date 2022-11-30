@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-    <img src="{{ applicant.img.url }}" alt="Photo de profil de {{ applicant.name }}" style="max-width: 250px;">
-    <h2>{{ applicant.first_name }} {{ applicant.name }}</h2>
-    <h3>{{ applicant.position }}</h3>
-    <p>{{ applicant.description }}</p>
-
-    <a href="{% url "applicants_page" %}">Retourner à la liste</a>
-
+    <div class="container-fluid" style="padding:30px 0 0 40px">
+        <img src="{{ applicant.img }}" alt="Photo de profil de {{ applicant.name }}" style="max-width: 250px;">
+        <h2>{{ applicant.first_name }} {{ applicant.name }}</h2>
+        <h3>{{ applicant.position }}</h3>
+        <p>{{ applicant.description }}</p>
+        
+        <a href="{% url "applicants_page" %}">Retourner à la liste</a>
+    </div>
 {% endblock content %}
