@@ -14,23 +14,24 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from django.conf.urls.static import static
 from Arbre import settings
 
 from applicant.views import applicant_detail, index, applicants
-from account_simplonien.views import signup_simplonien, logout_simplonien, login_simplonien, account, apply
+from account_simplonien.views import competence, logout_simplonien, login_simplonien, account, apply
 
 
 urlpatterns = [
-    path('', index, name="index_page"),
+    path('', index, name="index_page",),
     path('admin/', admin.site.urls),
     path('login/', login_simplonien, name="login"),
     path('logout/', logout_simplonien, name="logout"),
     path('account/', account, name="account"),
     path('apply/', apply, name="apply"),
-    path('signup_simplonien/', signup_simplonien, name="signup_simplonien"),
+    path('competence/', competence, name="competence"),
     path('candidats/', applicants, name="applicants_page"),
     path('candidats/<str:slug>', applicant_detail, name="applicant"),
+    path('', include("account_simplonien.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

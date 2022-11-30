@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+    <div>
+        <h2>Bienvenue {{user.username}} !</h2>
+    </div>
+
+    <div>
+        <p>Ceci est la page pour ajouter vos compétences</p>
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="container-fluid">
+            {{ form.as_p }}
+            <input type="submit" value="Envoyer">
+        </div>
+    </form>
+    
+    {% else %}
+        <a href="{% url "signup_simplonien" %}">S'inscrire</a>
+        <a href="{% url "login" %}">Connexion</a>
+        
+    {% endif %}
+
+{% endblock content %}
