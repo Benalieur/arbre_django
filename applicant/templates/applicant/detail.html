@@ -1,12 +1,217 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="container-fluid" style="padding:30px 0 0 40px">
-        <img src="{{ applicant.img }}" alt="Photo de profil de {{ applicant.name }}" style="max-width: 250px;">
-        <h2>{{ applicant.first_name }} {{ applicant.name }}</h2>
-        <h3>{{ applicant.position }}</h3>
-        <p>{{ applicant.description }}</p>
-        
-        <a href="{% url "applicants_page" %}">Retourner à la liste</a>
+<div class="container-fluid" style="padding: 20px">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">{{ applicant.first_name }} {{ applicant.name }}</h1>
+        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
     </div>
+
+    <!-- Content Row -->
+    <div class="row">
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Type de poste recherché</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ applicant.position }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Mon Curriculum Vitae</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">cv.pdf</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Mon adresse email
+                            </div>
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">email@email.com</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pending Requests Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Mes réseaux sociaux</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">linkedin facebook discord</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Row -->
+
+    <div class="row">
+
+        <!-- Area Chart -->
+        <div class="col-xl-8 col-lg-7">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Description</h6>
+                    <div class="dropdown no-arrow">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div>
+                    <div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                    <div style="display:flex">
+                        <img src="{{ applicant.img }}" alt="Photo de profil de {{ applicant.name }}" style="max-width: 250px;">
+                        <div style="padding : 10px 20px 10px 30px; font-size: 18px">{{ applicant.description }}</div>
+
+                    </div>
+                    </div>
+                </div>
+            </div>            
+            <!-- Project Card Example -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Compétences en cours d'acquisition :</h6>
+                </div>
+                <div class="card-body">
+                    <h4 class="small font-weight-bold">1er bloc : <span class="float-right">Développer la gestion des données analytiques d’un projet d’application</span></h4>
+                    <div class="progress mb-4">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <h4 class="small font-weight-bold">2nd bloc : <span class="float-right">Développer un programme d'intelligence artificielle</span></h4>
+                    <div class="progress mb-4">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <h4 class="small font-weight-bold">3ème bloc : <span class="float-right">Développer une application d’intelligence artificielle</span></h4>
+                    <div class="progress mb-4">
+                        <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <h4 class="small font-weight-bold">4ème bloc : <span class="float-right">Gérer un projet de développement d’application</span></h4>
+                    <div class="progress mb-4">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <a href="{% url "applicants_page" %}">Retourner à la liste des Simploniens</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Pie Chart -->
+        <div class="col-xl-4 col-lg-5">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                    <div class="dropdown no-arrow">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <h4 style="text-align: center">Les compétences de C1 à C18 du Simplonien.</h4>
+                    <div class="chart-pie pt-4 pb-2"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                    <img style="max-width:100%" src="/media/graphic/graphic_{{user.username}}.jpg" alt="Graphique radar de {{user.username}}">
+                    </div>
+                    <div class="mt-4 text-center small">
+                        <span class="mr-2">
+                            <i class="fas fa-circle text-primary"></i> Graphique
+                        </span>
+                        <span class="mr-2">
+                            <i class="fas fa-circle text-success"></i> radar de 
+                        </span>
+                        <span class="mr-2">
+                            <i class="fas fa-circle text-info"></i> {{user.username}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="">
+
+            <!-- Illustrations -->
+            <div class="card shadow mb-4 ">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Liste des compétences</h6>
+                </div>
+                <div class="card-body">
+                    <p>C1 : Qualifier les données grâce à des outils d’analyse et de visualisation de données en vue de vérifier leur adéquation avec le projet.</p>
+                    <p>C2 : Concevoir une base de données analytique avec l’approche orientée requêtes en vue de la mise à disposition des données pour un traitement analytique ou d’intelligence artificielle.</p>
+                    <p>C3 : Programmer l’import de données initiales nécessaires au projet en base de données, afin de les rendre exploitables par un tiers, dans un langage de programmation adapté et à partir de la stratégie de nettoyage des données préalablement définie.</p>
+                    <p>C4 : Préparer les données disponibles depuis la base de données analytique en vue de leur utilisation par les algorithmes d’intelligence artificielle.</p>
+                    <p>C5 : Concevoir le programme d’intelligence artificielle adapté aux données disponibles afin de répondre aux objectifs fonctionnels du projet, à l’aide des algorithmes, outils et méthodes standards, notamment de machine learning et de deep learning.</p>
+                    <p>C6 : Développer le programme d’intelligence artificielle selon les données du projet et les éléments de conception définis, en exploitant les algorithmes et les outils standards couramment utilisés dans le domaine.</p>
+                    <p>C7 : Développer l’interaction entre les fonctionnalités de l’application et l’intelligence artificielle dans le respect des objectifs visés et des bonnes pratiques du domaine.</p>
+                    <p>C8 : Modifier les paramètres et composants de l’intelligence artificielle afin d’ajuster aux objectifs du projet les capacités fonctionnelles de l’algorithme à l’aide de techniques d’optimisation.</p>
+                    <p>C9 : Analyser un besoin en développement d’application mettant en oeuvre des techniques d'intelligence artificielle afin de produire les éléments de réponses techniques.</p>
+                    <p>C10 : Concevoir une base de données relationnelle à l’aide de méthodes standards de modélisation de données.</p>
+                    <p>C11 : Développer les requêtes et les composants d'accès aux données dans un langage adapté afin de persister et mettre à jour les données issues de l’application en base de données.</p>
+                    <p>C12 : Développer le back-end de l’application d’intelligence artificielle dans le respect des spécifications fonctionnelles et des bonnes pratiques du domaine.</p>
+                    <p>C13 : Développer le front-end* de l’application d’intelligence artificielle à partir de maquettes et du parcours utilisateur⋅rice, dans le respect des objectifs visés et des bonnes pratiques du domaine.</p>
+                    <p>C14 : Améliorer l’application d’intelligence artificielle en développant une évolution fonctionnelle  pour répondre à un besoin exprimé par un client ou un utilisateur.</p>
+                    <p>C15 : Maintenir l’application d’intelligence artificielle à l’aide des techniques de monitorage afin de détecter et corriger les éventuels dysfonctionnements.</p>
+                    <p>C16 : Planifier les actions du projet à l’aide d’un outil  adapté afin de prévoir la complétion du projet dans les temps impartis.</p>
+                    <p>C17 : Concevoir un système de veille technologique permettant de collecter, classifier et analyser l’information afin d’améliorer la prise de décisions techniques.</p>
+                    <p>C18 : Communiquer avec les parties prenantes afin de rendre compte de l'avancement du projet en mettant en œuvre les canaux de communication nécessaires.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
 {% endblock content %}
