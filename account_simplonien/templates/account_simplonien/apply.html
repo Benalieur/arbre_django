@@ -1,27 +1,28 @@
 {% extends 'base.html' %}
 
-<form class="container-fluid" style="margin:20px 0 0 30px" method="POST" enctype="multipart/form-data">
+<div  class="container-fluid" style="margin:20px 0 0 30px">
 {% block content %}
 
-    {% if user.is_authenticated %}
+{% if user.is_authenticated %}
 <div class="container-fluid" style="padding:30px 0 0 40px">
-
+    
     <div style="margin-bottom:40px">
         <div>
             <h2>Bienvenue {{user.username}} !</h2>
         </div>
-    
+        
         <div>
-            <p>Notez vos informations pour ajouter votre candidature à notre liste de <a href="/candidats">candidatures</a> !</p>
+            <p>Notez vos informations pour ajouter votre candidature à la liste des <a href="/candidats">Simploniens</a> !</p>
         </div>
     </div>
     
     {% else %}
-        <a href="{% url "signup_simplonien" %}">S'incrire</a>
-        <a href="{% url "login" %}">Connexion</a>
-        
+    <a href="{% url "signup_simplonien" %}">S'incrire</a>
+    <a href="{% url "login" %}">Connexion</a>
+    
     {% endif %}
-
+    
+    <form method="POST" enctype="multipart/form-data">
 
         {% csrf_token %}
         <div class="mb-3">
